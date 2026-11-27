@@ -14,7 +14,8 @@
 	--ell-gris: var(--wp--preset--color--gris, #5A6B82);
 	--ell-linea: var(--wp--preset--color--linea, #D7E6F3);
 	--ell-r: 18px;
-	--ell-ola: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 60' preserveAspectRatio='none'%3E%3Cpath d='M0 38C260 66 520 68 760 46S1220 8 1440 30V60H0Z' fill='%23ffffff'/%3E%3C/svg%3E");
+	--ell-ola: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100' preserveAspectRatio='none'%3E%3Cpath d='M0 58C240 96 560 98 820 72S1260 20 1440 38V100H0Z' fill='%23ffffff'/%3E%3C/svg%3E");
+	--ell-ola-alto: clamp(48px, 7vw, 120px);
 	--ell-overlay: linear-gradient(105deg, rgba(10,46,92,.94) 0%, rgba(17,71,143,.86) 45%, rgba(30,116,214,.55) 100%);
 }
 
@@ -82,10 +83,10 @@ main.wp-block-group { margin-top: 0; }
 .ell-footer .ell-logo__txt strong { color: #fff; }
 
 /* ---------- Portada (bloque Portada con estilo "Con curva inferior") ---------- */
-.wp-block-cover.is-style-ola { overflow: hidden; padding-bottom: calc(var(--wp--preset--spacing--60) + 40px); }
+.wp-block-cover.is-style-ola { overflow: hidden; padding-bottom: calc(var(--wp--preset--spacing--60) + var(--ell-ola-alto)); }
 .wp-block-cover.is-style-ola::after,
 .ell-pagetitle::after {
-	content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: 60px; z-index: 2;
+	content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: calc(var(--ell-ola-alto) + 1px); z-index: 2;
 	background: var(--ell-ola) center bottom / 100% 100% no-repeat; pointer-events: none;
 }
 .wp-block-cover.is-style-ola .wp-block-cover__inner-container { z-index: 3; }
@@ -102,7 +103,7 @@ main.wp-block-group { margin-top: 0; }
 	position: relative; overflow: hidden; color: #fff;
 	background: var(--ell-overlay), var(--ell-bg) center / cover no-repeat, var(--ell-marino);
 }
-.ell-pagetitle__in { position: relative; z-index: 3; max-width: 1180px; margin: 0 auto; padding: 80px 24px 110px; }
+.ell-pagetitle__in { position: relative; z-index: 3; max-width: 1180px; margin: 0 auto; padding: 80px 24px calc(50px + var(--ell-ola-alto)); }
 .ell-pagetitle h1 { color: #fff; margin: 0 0 12px; font-size: clamp(2.2rem, 4.4vw, 3.3rem); }
 .ell-pagetitle p { color: #D3E6F7; font-size: 1.1rem; max-width: 640px; margin: 0; }
 .ell-crumbs { font-size: .85rem; color: #B9D7F0; margin-bottom: 14px; display: flex; gap: 8px; }
