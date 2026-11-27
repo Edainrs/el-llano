@@ -1,0 +1,24 @@
+/* El Llano — panel */
+.ell-fields .ell-field { margin: 0 0 18px; }
+.ell-fields .ell-label { display: block; font-weight: 600; margin-bottom: 6px; }
+.ell-fields .description { margin-top: 4px; }
+.ell-icon-picker { display: flex; flex-wrap: wrap; gap: 8px; }
+.ell-icon-picker label { display: grid; place-items: center; width: 48px; height: 48px; border: 1px solid #dcdcde; border-radius: 10px; cursor: pointer; color: #1559B5; background: #fff; }
+.ell-icon-picker input { position: absolute; opacity: 0; }
+.ell-icon-picker label:has(input:checked) { border-color: #1559B5; background: #EAF6FD; box-shadow: 0 0 0 2px #1559B5; }
+.ell-icon-picker svg { width: 24px; height: 24px; }
+.ell-relation { margin: 0; border: 1px solid #dcdcde; border-radius: 8px; max-height: 320px; overflow: auto; background: #fff; }
+.ell-relation li { display: flex; align-items: center; gap: 8px; margin: 0; padding: 8px 10px; border-bottom: 1px solid #f0f0f1; color: #646970; }
+.ell-relation li:last-child { border-bottom: 0; }
+.ell-relation li.is-on { color: #1d2327; background: #f6fbff; font-weight: 600; }
+.ell-relation .dashicons-menu { cursor: move; color: #a7aaad; }
+.ell-relation label { flex: 1; }
+.column-ell_orden { width: 28px; }
+.ell-handle { cursor: move; color: #a7aaad; }
+.ell-handle:hover { color: #1559B5; }
+.ell-sort-placeholder { height: 52px; background: #EAF6FD; }
+.ell-saving { opacity: .6; }
+.column-ell_foto { width: 60px; }
+.ell-ini { display: inline-grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, #1559B5, #4FB8EA); color: #fff; font-weight: 700; font-size: 13px; }
+.ell-pendiente { background: #FFF3B0; color: #6B5000; border: 1px dashed #D9A800; border-radius: 4px; padding: 0 5px; font-size: 12px; }
+.ell-settings .form-table th { width: 260px; }
