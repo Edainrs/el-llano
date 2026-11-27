@@ -93,7 +93,7 @@ main.wp-block-group { margin-top: 0; }
 .wp-block-cover.ell-hero.has-custom-content-position .wp-block-cover__inner-container { width: 100% !important; max-width: 1180px; margin-inline: auto !important; padding-inline: 0; box-sizing: border-box; }
 .wp-block-cover.ell-hero { padding-left: 24px; padding-right: 24px; }
 .wp-block-cover.ell-hero .wp-block-cover__inner-container > .alignwide { width: 100%; max-width: none; margin-left: 0 !important; margin-right: 0 !important; }
-.ell-hero h1 { color: #fff; max-width: 21ch; font-size: clamp(2.2rem, 4.6vw, 3.5rem); }
+.ell-hero h1 { color: #fff; max-width: 50%; font-size: clamp(2.2rem, 4.6vw, 3.5rem); }
 .ell-hero h1 mark { background: none; color: var(--ell-celeste-2); }
 .ell-hero p { color: #D3E6F7; max-width: 560px; }
 
@@ -302,6 +302,7 @@ main.wp-block-group { margin-top: 0; }
 	.ell-acc__item summary { grid-template-columns: 44px 1fr 22px; }
 	.ell-acc__item .ell-pill { display: none; }
 	.ell-header__cta { display: none !important; }
+	.ell-hero h1 { max-width: none; }
 }
 @media (max-width: 600px) {
 	.ell-cards, .ell-form-grid { grid-template-columns: 1fr; }

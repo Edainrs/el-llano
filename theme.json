@@ -65,8 +65,8 @@
 				{ "slug": "20", "name": "S", "size": "1rem" },
 				{ "slug": "30", "name": "M", "size": "1.5rem" },
 				{ "slug": "40", "name": "L", "size": "clamp(1.75rem, 3vw, 2.5rem)" },
-				{ "slug": "50", "name": "XL", "size": "clamp(2.5rem, 5vw, 4rem)" },
-				{ "slug": "60", "name": "XXL", "size": "clamp(3.5rem, 7vw, 6rem)" }
+				{ "slug": "50", "name": "XL", "size": "clamp(2rem, 4vw, 3rem)" },
+				{ "slug": "60", "name": "XXL", "size": "clamp(2.5rem, 5vw, 3.75rem)" }
 			]
 		},
 		"layout": { "contentSize": "780px", "wideSize": "1180px" },
