@@ -7,7 +7,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'ELL_VERSION', '1.0.0' );
+define( 'ELL_VERSION', wp_get_theme( get_template() )->get( 'Version' ) ?: '1.0.0' );
 define( 'ELL_DIR', get_template_directory() );
 define( 'ELL_URI', get_template_directory_uri() );
 
@@ -17,6 +17,7 @@ require ELL_DIR . '/inc/post-types.php';
 require ELL_DIR . '/inc/meta-boxes.php';
 require ELL_DIR . '/inc/order.php';
 require ELL_DIR . '/inc/settings.php';
+require ELL_DIR . '/inc/menus.php';
 require ELL_DIR . '/inc/blocks.php';
 require ELL_DIR . '/inc/cf7.php';
 require ELL_DIR . '/inc/demo.php';

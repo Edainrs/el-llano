@@ -14,7 +14,7 @@ Tema de bloques (Gutenberg) autoadministrable. No necesita Avada ni otros constr
 3. Ve a **Ajustes › Generales** y elige **Español de Chile** como idioma del sitio, para que el panel y los mensajes del formulario queden en español.
 4. Ve a **Datos del centro** y presiona **Cargar contenido de ejemplo**. Esto crea:
    - las páginas Inicio, Nosotros, Especialidades, Exámenes y Contacto y agenda, con la portada en Inicio;
-   - el menú principal;
+   - los menús de la cabecera y del pie (Apariencia › Menús);
    - las fichas de Equipo (12), Exámenes (8) y Especialidades (4);
    - el formulario "Solicitud de hora" de Contact Form 7.
 
@@ -22,7 +22,14 @@ Tema de bloques (Gutenberg) autoadministrable. No necesita Avada ni otros constr
 
 5. Revisa **Datos del centro** (teléfonos, horario, WhatsApp, mapa) y guarda.
 
-> Las direcciones de las páginas (`/nosotros/`, `/especialidades/`, `/examenes/`, `/contacto/`) se usan en enlaces internos. Si cambias el **slug** de una página, actualiza también los enlaces del menú y del pie.
+> Las direcciones de las páginas (`/nosotros/`, `/especialidades/`, `/examenes/`, `/contacto/`) se usan en enlaces internos (tarjetas, etiquetas de especialidades, botones). Si cambias el **slug** de una página, esos enlaces dejan de funcionar.
+
+## Actualizaciones del tema (GitHub + WP Pusher)
+
+- **Repositorio:** el tema vive en `github.com/Edainrs/el-llano` y se instala y actualiza con **WP Pusher**.
+- **No edites los archivos del tema en el servidor:** se sobrescriben en cada actualización.
+- **Plantillas:** no modifiques la cabecera, el pie ni las plantillas desde **Apariencia › Editor**. Esa copia queda guardada en la base de datos y tapa las versiones nuevas del tema. Si ya ocurrió, en el Editor usa **Restablecer** en esa plantilla.
+- **Versión:** cada versión nueva sube el número en `style.css`. Así los navegadores descargan los estilos nuevos.
 
 ---
 
@@ -42,7 +49,7 @@ Tema de bloques (Gutenberg) autoadministrable. No necesita Avada ni otros constr
 | Imagen del título de una página interna | Editar la página › panel lateral › **Imagen destacada** |
 | Subtítulo bajo el título de una página interna | Editar la página › panel lateral › **Extracto** |
 | Logo (cabecera y pie) | **Datos del centro › Identidad** |
-| Menú | **Apariencia › Menú del sitio** (o **Apariencia › Editor › Navegación › Menú principal**) |
+| Menú de la cabecera y enlaces del pie | **Apariencia › Menús** (o **Datos del centro › Menús del sitio**) |
 | Pie de página | **Apariencia › Editor › Patrones › Pie de página** |
 
 ### Fichas
@@ -51,6 +58,15 @@ Tema de bloques (Gutenberg) autoadministrable. No necesita Avada ni otros constr
 - **Relaciones:** en cada especialidad se marcan sus especialistas y exámenes, y se ordenan arrastrándolos. Los enlaces entre páginas se arman solos.
 - **Formulario:** un profesional aparece en el campo "Profesional" solo si tiene activada la casilla *Mostrar en el formulario*.
 - **Inicio:** solo aparecen los exámenes con la casilla *Destacar en la página de Inicio* (hasta 4).
+
+### Menús
+El tema usa los menús clásicos de **Apariencia › Menús**, con tres ubicaciones:
+
+- **Cabecera — menú principal.** Admite un nivel de submenú: al arrastrar un elemento un poco a la derecha, queda dentro del anterior. En computador se despliega al pasar el mouse; en celular aparece indentado.
+- **Pie de página — Navegación**
+- **Pie de página — Información**
+
+Para cambiar qué menú va en cada lugar, usa la pestaña **Gestionar ubicaciones**. Si una ubicación no tiene menú asignado, se muestran enlaces por defecto a las páginas del sitio. Los títulos "Navegación" e "Información" del pie se editan en **Apariencia › Editor › Patrones › Pie de página**.
 
 ### Acordeones
 - **Exámenes:** se arman solos a partir de las fichas. Al abrir uno se cierran los demás, y ninguno parte abierto.
@@ -111,6 +127,7 @@ el-llano/
 │   ├── meta-boxes.php    Pantallas de edición
 │   ├── order.php         Orden arrastrable
 │   ├── settings.php      Datos del centro
+│   ├── menus.php         Menús clásicos (cabecera y pie)
 │   ├── blocks.php        Bloques dinámicos (equipo, exámenes, especialidades, etc.)
 │   ├── cf7.php           Campos [servicio] y [profesional]
 │   ├── demo.php          Contenido de ejemplo

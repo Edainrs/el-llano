@@ -178,15 +178,8 @@ function ell_demo_import() {
 	update_option( 'show_on_front', 'page' );
 	update_option( 'page_on_front', $ids['inicio'] );
 
-	/* ---------- Menú ---------- */
-	if ( ! get_posts( array( 'post_type' => 'wp_navigation', 'post_status' => 'publish', 'title' => 'Menú principal', 'numberposts' => 1, 'fields' => 'ids' ) ) ) {
-		$links = '';
-		foreach ( array( 'inicio' => 'Inicio', 'nosotros' => 'Nosotros', 'especialidades' => 'Especialidades', 'examenes' => 'Exámenes', 'contacto' => 'Contacto y agenda' ) as $slug => $label ) {
-			$attrs  = array( 'label' => $label, 'type' => 'page', 'id' => (int) $ids[ $slug ], 'url' => 'inicio' === $slug ? home_url( '/' ) : get_permalink( $ids[ $slug ] ), 'kind' => 'post-type' );
-			$links .= '<!-- wp:navigation-link ' . wp_json_encode( $attrs, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES ) . ' /-->';
-		}
-		wp_insert_post( array( 'post_type' => 'wp_navigation', 'post_status' => 'publish', 'post_title' => 'Menú principal', 'post_content' => wp_slash( $links ) ) );
-	}
+	/* ---------- Menús (Apariencia › Menús) ---------- */
+	ell_demo_menus( $ids );
 
 	/* ---------- Enlaces permanentes ---------- */
 	if ( ! get_option( 'permalink_structure' ) ) {

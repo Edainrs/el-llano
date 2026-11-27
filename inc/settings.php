@@ -47,10 +47,7 @@ function ell_settings_fields() {
 
 add_action( 'admin_menu', function () {
 	add_menu_page( 'Datos del centro', 'Datos del centro', 'edit_pages', 'ell-datos', 'ell_render_settings', 'dashicons-building', 20 );
-	// Acceso directo al editor del menú (en los temas de bloques no existe Apariencia › Menús).
-	add_submenu_page( 'themes.php', 'Menú del sitio', 'Menú del sitio', 'edit_theme_options', 'site-editor.php?p=%2Fnavigation' );
 	add_submenu_page( 'ell-datos', 'Datos del centro', 'Datos del centro', 'edit_pages', 'ell-datos', 'ell_render_settings' );
-	add_submenu_page( 'ell-datos', 'Menú del sitio', 'Menú del sitio', 'edit_theme_options', 'site-editor.php?p=%2Fnavigation' );
 } );
 
 /**
@@ -140,7 +137,7 @@ function ell_render_settings() {
 
 	if ( current_user_can( 'manage_options' ) ) {
 		echo '<hr><h2>Contenido de ejemplo</h2>';
-		echo '<p>Crea las páginas (Inicio, Nosotros, Especialidades, Exámenes, Contacto y agenda), el menú, las fichas de Equipo, Exámenes y Especialidades, y el formulario de Contact Form 7 si está activo. No borra nada: si una página o ficha ya existe con el mismo nombre, la omite.</p>';
+		echo '<p>Crea las páginas (Inicio, Nosotros, Especialidades, Exámenes, Contacto y agenda), los menús, las fichas de Equipo, Exámenes y Especialidades, y el formulario de Contact Form 7 si está activo. No borra nada: si una página o ficha ya existe con el mismo nombre, la omite.</p>';
 		echo '<form method="post" action="' . esc_url( admin_url( 'admin-post.php' ) ) . '">';
 		wp_nonce_field( 'ell_demo' );
 		echo '<input type="hidden" name="action" value="ell_demo">';

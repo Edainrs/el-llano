@@ -13,6 +13,7 @@ defined( 'ABSPATH' ) || exit;
 function ell_block_defs() {
 	return array(
 		'logo'               => array( 'Logo del centro', 'visibility', array( 'variante' => 'cabecera' ), array( 'variante' => array( 'Ubicación', array( 'cabecera' => 'Cabecera (fondo claro)', 'pie' => 'Pie (fondo oscuro)' ) ) ) ),
+		'menu'               => array( 'Menú (Apariencia › Menús)', 'menu', array( 'ubicacion' => 'principal' ), array( 'ubicacion' => array( 'Menú', ell_menu_locations() ) ) ),
 		'barra-superior'     => array( 'Barra superior (dirección, horario, teléfonos)', 'info-outline', array(), array() ),
 		'datos-contacto'     => array( 'Datos de contacto', 'phone', array( 'variante' => 'pie' ), array( 'variante' => array( 'Formato', array( 'pie' => 'Lista (pie de página)', 'tarjetas' => 'Tarjetas (página de contacto)' ) ) ) ),
 		'botones-contacto'   => array( 'Botones llamar y WhatsApp', 'button', array( 'estilo' => 'claro' ), array( 'estilo' => array( 'Estilo', array( 'claro' => 'Sobre fondo claro', 'oscuro' => 'Sobre fondo oscuro' ) ) ) ),

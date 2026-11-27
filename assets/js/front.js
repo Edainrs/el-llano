@@ -33,3 +33,33 @@
 		help.textContent = ( opt && opt.dataset.ayuda ) || '';
 	} );
 } )();
+
+/* Menú de la cabecera en celulares */
+( function () {
+	function cerrar( nav ) {
+		nav.classList.remove( 'is-open' );
+		var b = nav.querySelector( '.ell-menu__toggle' );
+		if ( b ) b.setAttribute( 'aria-expanded', 'false' );
+	}
+	document.addEventListener( 'click', function ( e ) {
+		var btn = e.target.closest && e.target.closest( '.ell-menu__toggle' );
+		document.querySelectorAll( '.ell-menu.is-open' ).forEach( function ( n ) {
+			if ( ! btn || n !== btn.closest( '.ell-menu' ) ) {
+				if ( ! n.contains( e.target ) || ( e.target.closest && e.target.closest( 'a' ) ) ) cerrar( n );
+			}
+		} );
+		if ( ! btn ) return;
+		var nav = btn.closest( '.ell-menu' );
+		var header = btn.closest( '.ell-header' ) || nav;
+		document.documentElement.style.setProperty( '--ell-menu-top', Math.round( header.getBoundingClientRect().bottom ) + 'px' );
+		var open = ! nav.classList.contains( 'is-open' );
+		nav.classList.toggle( 'is-open', open );
+		btn.setAttribute( 'aria-expanded', open ? 'true' : 'false' );
+	} );
+	document.addEventListener( 'keydown', function ( e ) {
+		if ( e.key === 'Escape' ) document.querySelectorAll( '.ell-menu.is-open' ).forEach( cerrar );
+	} );
+	window.addEventListener( 'resize', function () {
+		if ( window.innerWidth > 1000 ) document.querySelectorAll( '.ell-menu.is-open' ).forEach( cerrar );
+	} );
+} )();
